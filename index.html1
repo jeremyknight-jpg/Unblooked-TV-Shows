@@ -1,0 +1,43 @@
+<html>
+<head>
+  <base target="_blank">
+</head>
+<body>
+
+<button onclick="openGame()">CLICK THIS TO OPEN GAMES</button>
+
+<script>
+function openGame() {
+  // Open a new tab
+  var win = window.open("", "_blank");
+
+  // Build HTML so <body> exists
+  win.document.write(`
+    <html>
+      <head>
+        <title>Loading...</title>
+        <style>
+          body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+          }
+          iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+          }
+        </style>
+      </head>
+      <body>
+        <iframe src="https://totallylearning.top"></iframe>
+      </body>
+    </html>
+  `);
+
+  win.document.close();
+}
+</script>
+
+</body>
+</html>
