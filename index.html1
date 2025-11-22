@@ -4,7 +4,7 @@
 </head>
 <body>
 
-<button onclick="openGame()">CLICK THIS TO OPEN GAMES</button>
+<button onclick="openGame()">CLICK THIS TO OPEN MOVIES & TV SHOWS</button>
 
 <script>
 function openGame() {
@@ -15,7 +15,7 @@ function openGame() {
   win.document.write(`
     <html>
       <head>
-        <title>Loading...</title>
+        <title>about:blank</title>
         <style>
           body, html {
             margin: 0;
@@ -30,7 +30,7 @@ function openGame() {
         </style>
       </head>
       <body>
-        <iframe src="https://totallylearning.top"></iframe>
+        <iframe src="https://www.cineby.gd/"></iframe>
       </body>
     </html>
   `);
