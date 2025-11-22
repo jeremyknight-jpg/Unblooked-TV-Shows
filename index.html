@@ -56,17 +56,32 @@
             background: #1c1c1c;
         }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
+        /* Buttons */
+        #linkList button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #0066cc;
+            color: white;
+            transition: 0.2s;
         }
 
-        body.dark a {
-            color: #4ea3ff;
+        #linkList button:hover {
+            background: #004f99;
         }
 
-        a:hover {
-            text-decoration: underline;
+        body.dark #linkList button {
+            background: #4ea3ff;
+            color: #000;
+        }
+
+        body.dark #linkList button:hover {
+            background: #2f7ec7;
         }
 
         /* Search Bar */
@@ -94,41 +109,31 @@
 </header>
 
 <section>
-    <h2></h2>
-    <p>Updates Weekly <strong></strong></p>
-</section>
-
-<section>
-
-    <!-- Search Bar -->
-    <input type="text" id="searchBar" placeholder="Search TV Shows..." onkeyup="searchLinks()">
-<section>
     <h2>TV Shows</h2>
 
-    <input type="text" id="searchBar" placeholder="Search links..." onkeyup="searchLinks()">
+    <input type="text" id="searchBar" placeholder="Search TV Shows..." onkeyup="searchLinks()">
 
     <div id="linkList">
 
-        <button onclick="window.open('https://example.com', '_blank')">
+        <!-- Example TV Shows with CLOAKER -->
+        
+        <button onclick="cloak('https://example.com')">
             Squid Game S3
         </button>
 
-        <button onclick="window.open('https://example.com/tutorials', '_blank')">
+        <button onclick="cloak('https://drive.google.com/drive/folders/11W6C-Jqv9iQVasqjfiaYz77puax1UTjH')">
             Family Guy
         </button>
 
-        <button onclick="window.open('https://example.com/portfolio', '_blank')">
+        <button onclick="cloak('https://example.com/portfolio')">
             Gravity Falls
         </button>
 
-        <button onclick="window.open('https://github.com', '_blank')">
+        <button onclick="cloak('https://github.com')">
             Rick & Morty
         </button>
 
     </div>
-</section>
-
-
 </section>
 
 <script>
@@ -137,15 +142,45 @@
         document.body.classList.toggle("dark");
     }
 
-    // Search Filter Function
+    // Search Filter Function (works with buttons)
     function searchLinks() {
         let input = document.getElementById("searchBar").value.toLowerCase();
-        let items = document.querySelectorAll("#linkList li");
+        let buttons = document.querySelectorAll("#linkList button");
 
-        items.forEach(li => {
-            let text = li.innerText.toLowerCase();
-            li.style.display = text.includes(input) ? "" : "none";
+        buttons.forEach(btn => {
+            let text = btn.innerText.toLowerCase();
+            btn.style.display = text.includes(input) ? "" : "none";
         });
+    }
+
+    // About:blank cloaker function
+    function cloak(url) {
+        var win = window.open("", "_blank");
+
+        win.document.write(`
+            <html>
+            <head>
+                <title>about:blank</title>
+                <style>
+                    body, html {
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                    }
+                </style>
+            </head>
+            <body>
+                <iframe src="${url}"></iframe>
+            </body>
+            </html>
+        `);
+
+        win.document.close();
     }
 </script>
 
