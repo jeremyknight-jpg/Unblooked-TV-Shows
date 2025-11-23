@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -190,5 +190,26 @@
            Squid Game Season 3
         </a>
     </li>
-
 </ul>
+</section>
+
+<script>
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+    }
+
+    // Search Filter Function
+    function searchLinks() {
+        const input = document.getElementById("searchBar").value.toLowerCase();
+        const items = document.querySelectorAll("#linkList li");
+
+        items.forEach(li => {
+            const text = li.innerText.toLowerCase();
+            li.style.display = text.includes(input) ? "" : "none";
+        });
+    }
+</script>
+
+</body>
+</html>
