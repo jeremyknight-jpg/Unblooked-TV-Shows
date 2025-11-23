@@ -1,244 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Shows</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f5;
-            color: #000;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        body.dark {
-            background: #121212;
-            color: #e0e0e0;
-        }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header button {
-            background: #fff;
-            color: #333;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        header button:hover {
-            opacity: 0.8;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-            background: #fff;
-            border-radius: 8px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        body.dark section {
-            background: #1c1c1c;
-        }
-
-        /* Buttons */
-        #linkList button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background: #0066cc;
-            color: white;
-            transition: 0.2s;
-        }
-
-        #linkList button:hover {
-            background: #004f99;
-        }
-
-        body.dark #linkList button {
-            background: #4ea3ff;
-            color: #000;
-        }
-
-        body.dark #linkList button:hover {
-            background: #2f7ec7;
-        }
-
-        /* Search Bar */
-        #searchBar {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        body.dark #searchBar {
-            background: #333;
-            color: #fff;
-            border-color: #555;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Unblocked TV Shows</h1>
-    <button onclick="toggleDarkMode()">Dark Mode</button>
-</header>
-
-<section>
-    <h2>TV Shows</h2>
-
-    <input type="text" id="searchBar" placeholder="Search TV Shows..." onkeyup="searchLinks()">
-
-    <div id="linkList">
-
 <ul id="linkList">
-        <li>
-            <a class="link-button"
-               href="https://drive.google.com/drive/folders/11W6C-Jqv9iQVasqjfiaYz77puax1UTjH"
-               target="_blank" rel="noopener noreferrer">
-               Family Guy
-            </a>
-        </li>
+
+    <li>
         <a class="link-button"
-               href="https://drive.google.com/drive/folders/1tXo2krTMvXr-ATSqthy55PUpRRIu1HRr"
-               target="_blank" rel="noopener noreferrer">
-               The Simpsons
-            </a>
-        </li>
-    <a class="link-button"
-               href="https://drive.google.com/drive/folders/1EvDzzcMmYt8Wol75Ip5PtEfu78USEHH-?usp=share_link"
-               target="_blank" rel="noopener noreferrer">
-               South Park
-            </a>
-        </li>
-     <a class="link-button"
-               href="https://drive.google.com/drive/folders/1OwoKydzUQUUp6n-Nh7CCAQXGLfchU8Ta"
-               target="_blank" rel="noopener noreferrer">
-               Adventure Time
-            </a>
-        </li>
-    <a class="link-button"
-               href="https://drive.google.com/drive/folders/1BIKwvUvUCx8lHm3mwhVRV22hCcMau9ws"
-               target="_blank" rel="noopener noreferrer">
-               Tom & Jerry
-            </a>
-        </li>
-     <a class="link-button"
-               href="https://drive.google.com/drive/folders/1DdwOFAilBai2kDZVmRDCoNkqxTu6_E_5"
-               target="_blank" rel="noopener noreferrer">
-               Steven Universe
-            </a>
-        </li>
-     <a class="link-button"
-               href="https://drive.google.com/drive/folders/1ySajy4O8tRbVd_vlGCk9uyMxYHFUH-Hy"
-               target="_blank" rel="noopener noreferrer">
-               Rick & Morty
-            </a>
-        </li>
-    <a class="link-button"
-               href="https://drive.google.com/drive/folders/1QpqcZWVMlzIru0g8xf5olhMeY75YKJkk"
-               target="_blank" rel="noopener noreferrer">
-               Spongebob Squarepants
-            </a>
-        </li>
-     <a class="link-button"
-               href="https://drive.google.com/drive/folders/1vDYQQUT_BEMS779FI2rfC-FnkoUG3g4Y"
-               target="_blank" rel="noopener noreferrer">
-               Blue's Clues
-            </a>
-        </li>
-    <a class="link-button"
-               href="https://drive.google.com/drive/folders/1fU-FrVZ12bAZYxtxrofKkEQg2kMrIjm3"
-               target="_blank" rel="noopener noreferrer">
-               Gravity Falls
-            </a>
-        </li>
-      <a class="link-button"
-               href="https://drive.google.com/drive/u/0/folders/15GtJc8NKaGoZyPoRXcJjTs6ZSQfKJ-xb"
-               target="_blank" rel="noopener noreferrer">
-               Lego Ninjago Masters of Spinjitzu
-            </a>
-        </li>
-    <a class="link-button"
-               href=" https://drive.google.com/drive/folders/15ZJ0tbruEwiRxhbue3Oria_l0i-P197a"
-               target="_blank" rel="noopener noreferrer">
-               Squid Game Season 3
-            </a>
-        </li>
-    </div>
-</section>
+           href="https://drive.google.com/drive/folders/11W6C-Jqv9iQVasqjfiaYz77puax1UTjH"
+           target="_blank" rel="noopener noreferrer">
+           Family Guy
+        </a>
+    </li>
 
-<script>
-    // Dark Mode Toggle
-    function toggleDarkMode() {
-        document.body.classList.toggle("dark");
-    }
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1tXo2krTMvXr-ATSqthy55PUpRRIu1HRr"
+           target="_blank" rel="noopener noreferrer">
+           The Simpsons
+        </a>
+    </li>
 
-    // Search Filter Function (works with buttons)
-    function searchLinks() {
-        let input = document.getElementById("searchBar").value.toLowerCase();
-        let buttons = document.querySelectorAll("#linkList button");
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1EvDzzcMmYt8Wol75Ip5PtEfu78USEHH-?usp=share_link"
+           target="_blank" rel="noopener noreferrer">
+           South Park
+        </a>
+    </li>
 
-        buttons.forEach(btn => {
-            let text = btn.innerText.toLowerCase();
-            btn.style.display = text.includes(input) ? "" : "none";
-        });
-    }
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1OwoKydzUQUUp6n-Nh7CCAQXGLfchU8Ta"
+           target="_blank" rel="noopener noreferrer">
+           Adventure Time
+        </a>
+    </li>
 
-    // About:blank cloaker function
-    function cloak(url) {
-        var win = window.open("", "_blank");
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1BIKwvUvUCx8lHm3mwhVRV22hCcMau9ws"
+           target="_blank" rel="noopener noreferrer">
+           Tom & Jerry
+        </a>
+    </li>
 
-        win.document.write(`
-            <html>
-            <head>
-                <title>about:blank</title>
-                <style>
-                    body, html {
-                        margin: 0;
-                        padding: 0;
-                        height: 100%;
-                    }
-                    iframe {
-                        width: 100%;
-                        height: 100%;
-                        border: none;
-                    }
-                </style>
-            </head>
-            <body>
-                <iframe src="${url}"></iframe>
-            </body>
-            </html>
-        `);
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1DdwOFAilBai2kDZVmRDCoNkqxTu6_E_5"
+           target="_blank" rel="noopener noreferrer">
+           Steven Universe
+        </a>
+    </li>
 
-        win.document.close();
-    }
-</script>
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1ySajy4O8tRbVd_vlGCk9uyMxYHFUH-Hy"
+           target="_blank" rel="noopener noreferrer">
+           Rick & Morty
+        </a>
+    </li>
 
-</body>
-</html>
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1QpqcZWVMlzIru0g8xf5olhMeY75YKJkk"
+           target="_blank" rel="noopener noreferrer">
+           Spongebob Squarepants
+        </a>
+    </li>
+
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1vDYQQUT_BEMS779FI2rfC-FnkoUG3g4Y"
+           target="_blank" rel="noopener noreferrer">
+           Blue's Clues
+        </a>
+    </li>
+
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/1fU-FrVZ12bAZYxtxrofKkEQg2kMrIjm3"
+           target="_blank" rel="noopener noreferrer">
+           Gravity Falls
+        </a>
+    </li>
+
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/u/0/folders/15GtJc8NKaGoZyPoRXcJjTs6ZSQfKJ-xb"
+           target="_blank" rel="noopener noreferrer">
+           Lego Ninjago Masters of Spinjitzu
+        </a>
+    </li>
+
+    <li>
+        <a class="link-button"
+           href="https://drive.google.com/drive/folders/15ZJ0tbruEwiRxhbue3Oria_l0i-P197a"
+           target="_blank" rel="noopener noreferrer">
+           Squid Game Season 3
+        </a>
+    </li>
+
+</ul>
